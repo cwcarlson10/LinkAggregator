@@ -1,0 +1,11 @@
+
+
+<%= simple_form_for(@link, html: { class: 'form-horizontal' }) do |f| %>
+  <%= f.input :title %>
+
+  <%= f.input :url %>
+
+  <%= f.input :votes %>
+
+  <%= f.button :submit %>
+<% end %>

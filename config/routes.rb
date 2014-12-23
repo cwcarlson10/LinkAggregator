@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  resources :links
+
+  root 'links#index'
+
+  put '/up_vote/:id', to: 'links#up_vote', as: :up_vote
+  put '/down_vote/:id', to: 'links#down_vote', as: :down_vote
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

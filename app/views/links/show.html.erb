@@ -1,0 +1,11 @@
+<h1>Link</h1>
+
+  <div class="well">
+    <ul class="list-inline">
+      <li><%= @link.title %></li>
+      <li><%= @link.url %></li>
+      <li><%= @link.votes %></li>
+      <li class="pull-right"><%= link_to 'Back', links_path %></li>
+      <li class="pull-right"><%= link_to 'Delete', link_path(@link.id), method: :delete %></li>
+    </ul>
+  </div>

@@ -1,0 +1,14 @@
+<h1>Links</h1>
+
+<% @links.each do |link| %>
+  <div class="well">
+    <ul class="list-inline">
+      <li><%= link_to link.title, link.url %></li>
+      <li>votes: <%= link.votes %></li>
+      <li><%= link_to raw("<i class=\"glyphicon glyphicon-arrow-up\">upvote</i>"), up_vote_path(link.id),  class: "btn btn-default", method: :put %>
+      <li><%= link_to raw("<i class=\"glyphicon glyphicon-arrow-down\">downvote</i>"), down_vote_path(link.id),  class: "btn btn-default", method: :put %>
+      <li class="pull-right"><%= link_to "Link", link_path(link.id), class: 'btn btn-primary' %></li>
+    </ul>
+  </div>
+<% end %>
+<%= link_to 'New Link', new_link_path %>
