@@ -2,13 +2,15 @@
 
 <% @links.each do |link| %>
   <div class="well">
-    <ul class="list-inline">
-      <li><%= link_to link.title, link.url %></li>
-      <li>votes: <%= link.votes %></li>
-      <li><%= link_to raw("<i class=\"glyphicon glyphicon-arrow-up\">upvote</i>"), up_vote_path(link.id),  class: "btn btn-default", method: :put %>
-      <li><%= link_to raw("<i class=\"glyphicon glyphicon-arrow-down\">downvote</i>"), down_vote_path(link.id),  class: "btn btn-default", method: :put %>
-      <li class="pull-right"><%= link_to "Link", link_path(link.id), class: 'btn btn-primary' %></li>
+    <ul class="list-inline center-block row">
+      <li class="col-md-4 valign"><%= link_to link.title, link.url %></li>
+      <div class="list-inline col-md-7 valign">
+        <li>votes: <%= link.votes %></li>
+        <li><%= link_to raw("<i class=\"glyphicon glyphicon-arrow-up\">Vote</i>"), up_vote_path(link.id),  class: "btn btn-default", method: :put %>
+        <li><%= link_to raw("<i class=\"glyphicon glyphicon-arrow-down\">Vote</i>"), down_vote_path(link.id),  class: "btn btn-default", method: :put %>
+      </div>
+      <li class="pull-right col-md-1 valign"><%= link_to "Link", link_path(link.id), class: 'btn btn-primary' %></li>
     </ul>
   </div>
 <% end %>
-<%= link_to 'New Link', new_link_path %>
+<%= link_to 'New Link', new_link_path, class: 'btn btn-primary' %>
